@@ -112,6 +112,12 @@ update-alternatives --install
     end
   end
 
+  def slavearray=(new_slavearray)
+    rebuild do
+      @property_hash[:priority] = new_slavearray
+    end
+  end
+
   private
 
   def rebuild(&_block)
